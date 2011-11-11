@@ -278,6 +278,7 @@ class BacklogPlugin(Component):
         else:
             req.send_response(200)
         req.send_header('Content-Type', 'application/json')
+        req.send_header('Content-Length', len(data))
         req.end_headers()
         req.write(data)
 
@@ -331,6 +332,7 @@ class BacklogPlugin(Component):
         else:
             req.send_response(200)
         req.send_header('Content-Type', 'application/json')
+        req.send_header('Content-Length', len(data))
         req.end_headers()
         req.write(data)
 
@@ -409,6 +411,7 @@ class BacklogPlugin(Component):
             req.send_response(200)
 
         req.send_header('Content-Type', 'application/json')
+        req.send_header('Content-Length', len(data))
         req.end_headers()
         req.write(data)
         #raise RequestDone
